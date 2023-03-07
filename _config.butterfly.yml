@@ -18,8 +18,8 @@ subtitle:
   source: 1
   # 如果关闭打字效果，subtitle 只会显示 sub 的第一行文字
   sub:
-   - 昨夜星辰昨夜风，画楼西畔桂堂东。
    - 须知少时拏云志，曾许人间第一流。
+   - 昨夜星辰昨夜风，画楼西畔桂堂东。
    - 夫天地者，万物之逆旅也；光阴者，百代之过客也。
    - 自信人生二百年，会当水击三千里。
 description: 学习 记录 分享
@@ -140,7 +140,7 @@ menu:
 
 # 代码
 # 代码高亮主题
-highlight_theme: mac light
+highlight_theme: light
 # 代码复制
 highlight_copy: true
 #代码框不展开，需点击 '>' 打开 true:关闭  false:展开
@@ -157,8 +157,15 @@ social:
   fa-brands fa-weixin: https://img.shijinying.top/1676018767982.jpg || 微信
   fas fa-envelope: mailto:857205464@qq.com || Email
   fab fa-github: https://github.com/sjy-smile || Github
-  fa-brands fa-bilibili: https://space.bilibili.com/419799752 || BILIBILI
-  fa-solid fa-rss: https://github.com/sjy-smile/sjy-smile.github.io/issues || RSS
+  # fa-brands fa-bilibili: https://space.bilibili.com/419799752 || BILIBILI
+  fa-solid fa-rss: /atom.xml || RSS
+
+
+#Feed Atom
+feed:
+  type: atom
+  path: /atom.xml
+  limit: false
 
 # 顶部图 不显示顶部图:true，显示顶部图:false
 disable_top_img: false
@@ -197,7 +204,8 @@ nav:
 
 # 头像
 avatar:
-  img: /img/head.jpg
+  #img: /img/head.jpg
+  img: https://thirdwx.qlogo.cn/mmopen/vi_32/iclF6ggTvPib1k50Gf0iaeGWloISZ0t3bSWQDSzMiatSsCtiaPc9QcZuOdwZ3qicPKanCTzdUr5VFrDKEmzIMmztLMRg/132
   effect: false # true则会一直转圈
 
 
@@ -212,9 +220,12 @@ cover:
   position: both
   # 当没有设置cover时，默认的封面显示
   default_cover:
-    - /img/default_cover1.jpg
-    - /img/default_cover2.jpg
-    - /img/default_cover3.jpg
+    - https://img.shijinying.top/img/cover/default_cover1.jpg
+    - https://img.shijinying.top/img/cover/default_cover2.jpg
+    - https://img.shijinying.top/img/cover/default_cover3.jpg
+    #- /img/default_cover1.jpg
+    #- /img/default_cover2.jpg
+    #- /img/default_cover3.jpg
 
 # 文章页相关配置
 # 文章meta显示
