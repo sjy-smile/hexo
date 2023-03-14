@@ -1,3 +1,6 @@
+---
+abbrlink: '0'
+---
 ### MySql使用rpm的方式安装
 
 官方下载地址：https://downloads.mysql.com/archives/community/

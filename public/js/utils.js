@@ -243,7 +243,30 @@ const btf = {
         Fancybox.bind('[data-fancybox]', {
           Hash: false,
           Thumbs: {
-            autoStart: false
+            showOnStart: false
+          },
+          Images: {
+            Panzoom: {
+              maxScale: 4
+            }
+          },
+          Carousel: {
+            transition: 'slide'
+          },
+          Toolbar: {
+            display: {
+              left: ['infobar'],
+              middle: [
+                'zoomIn',
+                'zoomOut',
+                'toggle1to1',
+                'rotateCCW',
+                'rotateCW',
+                'flipX',
+                'flipY'
+              ],
+              right: ['slideshow', 'thumbs', 'close']
+            }
           }
         })
         window.fancyboxRun = true
@@ -252,7 +275,7 @@ const btf = {
   },
 
   initJustifiedGallery: function (selector) {
-    selector.forEach(function (i) {
+    const runJustifiedGallery = i => {
       if (!btf.isHidden(i)) {
         fjGallery(i, {
           itemSelector: '.fj-gallery-item',
@@ -263,7 +286,10 @@ const btf = {
           }
         })
       }
-    })
+    }
+
+    if (Array.from(selector).length === 0) runJustifiedGallery(selector)
+    else selector.forEach(i => { runJustifiedGallery(i) })
   },
 
   updateAnchor: (anchor) => {

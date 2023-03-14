@@ -1,48 +1,88 @@
-# Hexo Configuration
-## Docs: https://hexo.io/docs/configuration.html
-## Source: https://github.com/hexojs/hexo/
-
-# Site
 title: 师小师の博客
-subtitle: 个人博客
+# 主页网站副标题
+subtitle:
+  enable: true
+  # Typewriter Effect (打字效果)
+  effect: true
+  startDelay: 300 # time before typing starts in milliseconds
+  typeSpeed: 150 # type speed in milliseconds
+  backSpeed: 50 # backspacing speed in milliseconds
+  # loop (循环打字)
+  loop: false
+  # source 调用第三方服务
+  # source: false 关闭调用
+  # source: 1  调用一言网的一句话（简体） https://hitokoto.cn/
+  # source: 2  调用一句网（简体） http://yijuzhan.com/
+  # source: 3  调用今日诗词（简体） https://www.jinrishici.com/
+  # subtitle 会先显示 source , 再显示 sub 的内容
+  source: 1
+  # 如果关闭打字效果，subtitle 只会显示 sub 的第一行文字
+  sub:
+   - 须知少时拏云志，曾许人间第一流。
+   - 昨夜星辰昨夜风，画楼西畔桂堂东。
+   - 夫天地者，万物之逆旅也；光阴者，百代之过客也。
+   - 自信人生二百年，会当水击三千里。
 description: 学习 记录 分享
 keywords:
 author: 师小师
 language: zh-CN
 timezone: Asia/Shanghai
 
+
+abbrlink:
+  alg: crc32  #support crc16(default) and crc32
+  rep: hex    #support dec(default) and hex
+  
 # URL 连接标题
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://shijinying.top
-permalink: :year/:month/:day/:title/
-permalink_defaults: null
+url: https://shijinying.top/
+# 文章永久链接的形成模版。每一篇文章都有唯一的url
+# permalink: :year/:month/:day/:title/
+permalink: posts/:abbrlink.html
+#文章永久链接中，各部分的默认值
+permalink_defaults:
+  lang: en
+  
 pretty_urls:
-  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+  # 是否在永久链接中保留尾部的 index.html，设置为 false 时去除
+  trailing_index: true
+  # 是否在永久链接中保留尾部的 .html, 设置为 false 时去除 (对尾部的 index.html无效)
+  trailing_html: true
+
+
 
 # Directory
+# 资源文件夹，这个文件夹用来存放写的博客内容
 source_dir: source
+# 公共文件夹，这个文件夹用于存放生成的站点文件
 public_dir: public
+# 标签文件夹
 tag_dir: tags
+# 归档文件夹
 archive_dir: archives
+ # 分类文件夹
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
 
 # Writing
-new_post_name: :title.md # File name of new posts
+# 默认新建的文件名
+new_post_name: :title.md
+# 新建文档的默认布局
 default_layout: post
-titlecase: false # Transform title into titlecase
+# 是否要把标题中的首字符大写
+titlecase: false
 external_link:
+  # 是否要在新开tab中打开链接
   enable: true # Open external links in new tab
   field: site # Apply to the whole site
   exclude: ''
 filename_case: 0
 render_drafts: false
-# 配置配置改为true
+# 加载静态资源
 post_asset_folder: true
-relative_link: true
+relative_link: false
 future: true
 highlight:
   enable: true
@@ -70,6 +110,7 @@ index_generator:
 default_category: uncategorized
 category_map:
 tag_map:
+
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
@@ -106,3 +147,10 @@ deploy:
   type: git
   repository: https://github.com/sjy-smile/sjy-smile.github.io.git
   branch: master
+  
+
+# 404页面设置（内置）
+error_404:
+  enable: true
+  subtitle: "页面沒有找到"
+  background: https://i.loli.net/2020/05/19/aKOcLiyPl2JQdFD.png

@@ -1,9 +1,10 @@
 ---
 title: mysql
-date: 2023-02-02 16:41:35
 tags: test
 categories: mysql
 cover: /img/default_cover1.jpg
+abbrlink: 9520183a
+date: 2023-02-02 16:41:35
 ---
 
 ### MySql使用rpm的方式安装
