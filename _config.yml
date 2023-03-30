@@ -147,9 +147,3 @@ deploy:
   repository: https://github.com/sjy-smile/sjy-smile.github.io.git
   branch: master
   
-
-# 404页面设置（内置）
-error_404:
-  enable: true
-  subtitle: "页面沒有找到"
-  background: https://i.loli.net/2020/05/19/aKOcLiyPl2JQdFD.png

@@ -381,3 +381,11 @@ local_search:
 #    - <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 #    #- <script src="https://cdn.jsdelivr.net/gh/xiabo2/CDN@latest/fishes.js"></script>
 #    - <script src="https://uuuuu.cf/js/fishes.js"></script> # 页脚养鱼(彩色)
+
+
+
+# 404页面设置（内置）
+error_404:
+  enable: true
+  subtitle: "页面沒有找到"
+  background: https://i.loli.net/2020/05/19/aKOcLiyPl2JQdFD.png
