@@ -1,0 +1,97 @@
+---
+title: C++数据结构顺序表代码
+tags: C++
+categories: C++
+abbrlink: 2f15bdd3
+date: 2023-05-08 16:22:35
+cover:
+---
+
+C++数据结构顺序表代码练习，插入、删除、查找
+
+```c++
+#include <cstdlib>
+#include <stdio.h>
+#include <stdlib.h>
+
+void change(char*& p) {
+    p = (char*)malloc(100);
+    fgets(p, 100, stdin);
+}
+
+#define MaxSize 50
+typedef int ElemType; // 让顺序表存储其他类型元素时，可以快速修改代码
+typedef struct {
+    ElemType data[MaxSize];
+    int length; // 顺序表长度
+} SqlList;
+
+// 插入
+bool insertList(SqlList& L, int i, ElemType e) {
+    if (i < 1 || i > L.length) {
+        return false;
+    }
+    for (int j = L.length; j >= i; j--) {
+        L.data[j] = L.data[j - 1];
+    }
+    L.data[i - 1] = e;
+    L.length++;
+
+    return true;
+}
+
+// 删除
+bool deleteList(SqlList& L, int i) {
+    if (i < 1 || i > L.length) {
+        return false;
+    }
+    for (int j = i; j < L.length; j++) {
+        L.data[j-1] = L.data[j];
+    }
+    L.length--;
+    return true;
+}
+
+// 打印
+void printlist(SqlList L) {
+    for (int i = 0; i < L.length; i++) {
+        printf("%3d", L.data[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    // char *p;
+    // scanf("%s",p);
+    // change(p);
+    // puts(p);
+    // free(p);
+    SqlList L;
+    L.data[0] = 6;
+    L.data[1] = 7;
+    L.data[2] = 8;
+    L.length = 3;
+    int a;
+    scanf("%d", &a);
+    // printlist(L);
+    bool ret = insertList(L, 2, a);
+    if (ret) {
+        printlist(L);
+    } else {
+        printf("");
+    }
+    // 删除
+    int d;
+    scanf("%d",&d);
+    bool dd = deleteList(L,d);
+    if(dd){
+        printlist(L);
+    }else {
+        printf("false\n");
+    }
+    return 0;
+}
+```
+
+
+
