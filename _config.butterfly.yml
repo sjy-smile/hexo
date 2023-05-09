@@ -382,7 +382,10 @@ local_search:
 #    #- <script src="https://cdn.jsdelivr.net/gh/xiabo2/CDN@latest/fishes.js"></script>
 #    - <script src="https://uuuuu.cf/js/fishes.js"></script> # 页脚养鱼(彩色)
 
-
+# 聊天信息 https://www.tidio.com/
+#tidio:
+#  enable: true
+#  public_key: r47hod2dazsqebyqny3ixddzuxlu0vyg
 
 # 404页面设置（内置）
 error_404:
