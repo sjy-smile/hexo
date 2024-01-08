@@ -92,10 +92,10 @@ cover:
   # 三个值可配置 left , right , both
   position: both
   # 当没有设置cover时，默认的封面显示
-  default_cover:
-    - https://img.shijinying.top/img/cover/default_cover1.jpg
-    - https://img.shijinying.top/img/cover/default_cover2.jpg
-    - https://img.shijinying.top/img/cover/default_cover3.jpg
+  #default_cover:
+    #- https://img.shijinying.top/img/cover/default_cover1.jpg
+    #- https://img.shijinying.top/img/cover/default_cover2.jpg
+    #- https://img.shijinying.top/img/cover/default_cover3.jpg
     #- /img/default_cover1.jpg
     #- /img/default_cover2.jpg
     #- /img/default_cover3.jpg
