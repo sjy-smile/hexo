@@ -749,6 +749,12 @@ category_img: https://oss.aliyuncs.com/aliyun_id_photo_bucket/default_handsome.j
 category_per_img: https://oss.aliyuncs.com/aliyun_id_photo_bucket/default_handsome.jpg
 ```
 
+#### 博客首页 图片遮罩层
+
+在文件 `themes\butterfly\source\css\_layout\head.styl` 第14行，修改 `background-color: alpha($dark-black, .3)`  为 `background-color: alpha($dark-black, .0)`
+
+注意：新版本 4.12.0，修改文件 `theme\butterfly\source\css\_global\index.styl` 中属性 `--mark-bg: alpha($dark-black, .3)`
+
 #### 主页top_img显示大小
 
 默认的显示为全屏。site-info的区域会居中显示
@@ -843,6 +849,35 @@ hexo 默认文章链接配置 `permalink: :year/:month/:day/:title/`  ，这种�
    # 修改文章链接地址配置
    permalink: posts/:abbrlink.html
    ```
+
+### 博客增加动画（首页打开懒加载）
+
+在 hexo 文件夹下执行以下命令
+
+```bash
+npm install hexo-butterfly-wowjs --save
+```
+
+修改主题配置文件 `_config.butterfly.yml` ，添加一下内容
+
+```bash
+wowjs:
+  enable: true #控制动画开关。true是打开，false是关闭
+  priority: 10 #过滤器优先级
+  mobile: false #移动端是否启用，默认移动端禁用
+  animateitem:
+    - class: recent-post-item #必填项，需要添加动画的元素的class
+      style: animate__zoomIn #必填项，需要添加的动画
+      duration: 2s #选填项，动画持续时间，单位可以是ms也可以是s。例如3s，700ms。
+      delay: 1s #选填项，动画开始的延迟时间，单位可以是ms也可以是s。例如3s，700ms。
+      offset: 100 #选填项，开始动画的距离（相对浏览器底部）
+      iteration: 2 #选填项，动画重复的次数
+    - class: card-widget
+      style: animate__zoomIn
+  animate_css: https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css
+  wow_js: https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js
+  wow_init_js: https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js
+```
 
 ### 主题按钮特效相关配置
 
@@ -1081,7 +1116,7 @@ v2.0.0 开始增加一个选项，可开启自动切换light mode 和 dark mode�
 readmode: true
 ```
 
-注意：阅读模式按钮不显示，删除 `rightsied.pug`  readmode 第一行相关代码即可，如：if is_post() && readmode
+注意：阅读模式按钮不显示，在路径 `themes\butterfly\layout\includes\rightside.pug` 文件，删除 `rightsied.pug`  readmode 第一行相关代码即可，如：if is_post() && readmode
 
 #### 排序按钮
 
@@ -1644,7 +1679,11 @@ snackbar:
 
 官网：https://butterfly.js.org/posts/4aa8abbe/#flink
 
-https://tzy1997.com/link/
+https://fe32.top/
+
+https://zsyyblog.com/
+
+https://www.fomal.cc/
 
 
 
