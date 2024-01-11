@@ -879,6 +879,23 @@ wowjs:
   wow_init_js: https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js
 ```
 
+参数详细说明
+
+| 参数                  | 备选值/类型        | 释义                                                         |
+| :-------------------- | :----------------- | :----------------------------------------------------------- |
+| enable                | true/false         | 【必选】控制开关                                             |
+| priority              | number             | 【可选】过滤器优先级，数值越小，执行越早，默认为10，选填     |
+| mobile                | true/false         | 控制移动端是否启用，默认移动端禁用                           |
+| animateitem.class     | class              | 【可选】添加动画类名，只支持给class添加                      |
+| animateitem.style     | text               | 【可选】动画样式，具体类型参考[animate.css](https://animate.style/) |
+| animateitem.duration  | time,单位为s或ms   | 【可选】动画持续时间，单位可以是ms也可以是s。例如3s，700ms。 |
+| animateitem.delay     | time,单位为s或ms   | 【可选】动画开始的延迟时间，单位可以是ms也可以是s。例如3s，700ms。 |
+| animateitem.offset    | number,单位为px    | 【可选】开始动画的距离（相对浏览器底部）。                   |
+| animateitem.iteration | number,单位为s或ms | 【可选】动画重复的次数                                       |
+| animate_css           | URL                | 【可选】animate.css的CDN链接,默认为`https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css` |
+| wow_js                | URL                | 【可选】wow.min.js的CDN链接,默认为`https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js` |
+| wow_init_js           | URL                | 【可选】wow_init.js的CDN链接,默认为`https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js` |
+
 ### 主题按钮特效相关配置
 
 1. 文章meta显示
