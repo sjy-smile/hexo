@@ -8,6 +8,12 @@ author: 师小师
 language: zh-CN
 timezone: Asia/Shanghai
 
+# Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
+deploy:
+  type: git
+  repository: https://github.com/sjy-smile/sjy-smile.github.io.git
+  branch: master
 
 abbrlink:
   alg: crc32  # 算法：crc16(default) and crc32
@@ -120,10 +126,3 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: butterfly
 
-# Deployment
-## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: git
-  repository: https://github.com/sjy-smile/sjy-smile.github.io.git
-  branch: master
-  
